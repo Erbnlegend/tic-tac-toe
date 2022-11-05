@@ -11,14 +11,19 @@
     <title>Tic-Tac-Toe</title>
 </head>
 <body>
-    <div class="header">Tic-Tac-Toe</div>
-    <div class="info">
-        <div class="player animate"></div>
-        <div id="reset">
-            <button>Reset</button>
+    <div class="header"><p>Tic-Tac-Toe</p>
+        <div id="wins">&nbsp</div>
+        <div class="resetInfo">
+            <button id="reset">RESET</button>
         </div>
     </div>
+    <div class="info">
+        <div class="player animate"></div>
+    </div>
     <div class="container">
+        <div id="winsContainer">
+
+        </div>
     </div>
     <div id="board">
         <div id="1" data-coordinates='{"x":0, "y":0}' class="playArea"></div>
@@ -30,6 +35,7 @@
         <div id="7" data-coordinates='{"x":2, "y":0}' class="playArea"></div>
         <div id="8" data-coordinates='{"x":2, "y":1}' class="playArea"></div>
         <div id="9" data-coordinates='{"x":2, "y":2}' class="playArea"></div>
+        
     </div>
     <div class="footer">Aaron Erb @2022</div>
 </body>
