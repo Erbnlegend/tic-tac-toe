@@ -8,7 +8,7 @@ const Game = (() => {
     const board = document.getElementById('board')
     const boxes = [...document.querySelectorAll('.playArea')]
     const wins = document.getElementById('wins')
-    const info = document.querySelector('.player')
+    const info = document.querySelector('.info')
     const resetButton = document.querySelector('.resetInfo')
     const resetEvent = document.getElementById('reset')
     resetEvent.addEventListener('click', reset)
@@ -44,8 +44,8 @@ const Game = (() => {
     
     function play(element, coords) {
         if(!winner) {
-            wins.textContent = "No Winner Quite Yet"
             info.classList.toggle('animate')
+            wins.textContent = "No Winner Quite Yet"
             // No Cheaters
             if(gameBoard[coords.x][coords.y] === player1.mark || gameBoard[coords.x][coords.y] === player2.mark) {
                 info.textContent = "yOu hErE tRyN CHeAt " + currentPlayer.player + "???"
@@ -62,6 +62,7 @@ const Game = (() => {
                 currentPlayer = player2
                 setTimeout(() => {
                     info.innerHTML = currentPlayer.player
+                    info.classList.toggle('animate')
                 }, 1);
             }
             else if(currentPlayer === player2) {
@@ -71,14 +72,11 @@ const Game = (() => {
                 // Must check for win before currentPlayer changes
                 checkWin(gameBoard)
                 currentPlayer = player1
-
                 setTimeout(() => {
                     info.innerHTML = currentPlayer.player
+                    info.classList.toggle('animate')
                 }, 1);
             }
-            setTimeout(() => {
-                info.classList.toggle('animate')
-            }, 1);
         }
     }
 

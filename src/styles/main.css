@@ -39,15 +39,14 @@ body, button {
     animation-name: playerTransition;
     animation-timing-function: ease-in-out;
     animation-duration: .3s;
-    animation-iteration-count: 1;
+    animation-iteration-count: .7;
 }
 .info {
+    position: relative;
+    left: 0;
     text-align: center;
     padding: 25px 0 0 0;
     font-size: 30px;
-}
-.info .player {
-    border: 5px solid rgba(255, 255, 255, 0);
 }
 
 .resetInfo {
