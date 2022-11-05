@@ -115,6 +115,8 @@ const Game = (() => {
             // ITS A TIE!!
             if(rounds === 9 && !winner) {
                 wins.textContent = "Well, nobody saw that coming! Its a tie!!"
+                wins.style.fontSize = '80px'
+                info.style.opacity = '0%'
             }
             if(winner) {
                 resetButton.style.opacity = '100%'
