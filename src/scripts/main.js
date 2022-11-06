@@ -39,10 +39,15 @@ const Game = (() => {
     // Init number of Rounds for winner
     let rounds = 0
     let winner = false
+    let tie = false
 
 // Will change on player Selections
     
     function play(element, coords) {
+        if(tie) {
+            tie = false
+            reset()
+        }
         if(!winner) {
             info.classList.toggle('animate')
             wins.textContent = "No Winner Quite Yet"
@@ -115,11 +120,9 @@ const Game = (() => {
             // ITS A TIE!!
             if(rounds === 9 && !winner) {
                 wins.textContent = "Well, nobody saw that coming! Its a tie!!"
+                tie = true
                 info.style.opacity = '0%'
                 resetButton.style.opacity = '100%'
-                setTimeout(() => {
-                    reset()
-                }, 2500);
             }
             if(winner) {
                 resetButton.style.opacity = '100%'
@@ -129,6 +132,7 @@ const Game = (() => {
         }
     }
     function reset() {
+        tie = false
         winner = false
         rounds = 0
         currentPlayer = player1
