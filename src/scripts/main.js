@@ -116,6 +116,10 @@ const Game = (() => {
             if(rounds === 9 && !winner) {
                 wins.textContent = "Well, nobody saw that coming! Its a tie!!"
                 info.style.opacity = '0%'
+                resetButton.style.opacity = '100%'
+                setTimeout(() => {
+                    reset()
+                }, 2500);
             }
             if(winner) {
                 resetButton.style.opacity = '100%'
