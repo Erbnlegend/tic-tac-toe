@@ -122,4 +122,7 @@ body, button {
     #wins {
         font-size: 40px !important;
     }
+    header {
+        grid-template-columns: repeat(3, minmax(100px, 1fr));
+    }
   }
