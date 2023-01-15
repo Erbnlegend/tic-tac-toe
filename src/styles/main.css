@@ -68,7 +68,7 @@ body, button {
     display: grid;
     width: 60%;
     margin: 50px auto 200px auto;
-    grid-template-columns: repeat(3, minmax(150px, 1fr));
+    grid-template-columns: repeat(3, minmax(75px, 1fr));
     grid-template-rows: repeat(3, minmax(150px, 1fr));
 }
 .playArea {
@@ -101,10 +101,25 @@ body, button {
 
 .footer {
     width: 100%;
-    position: fixed;
-    bottom: 0;
     text-align: center;
     border-top: var(--header-footer-border);
     box-shadow: var(--main-box-shadow);
-    padding: 25px;
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
+
+@media screen and (max-width: 600px) {
+    #board {
+        display: grid;
+        width: 80%;
+        margin: 50px auto 200px auto;
+        grid-template-columns: repeat(3, minmax(75px, 1fr));
+        grid-template-rows: repeat(3, minmax(100px, 1fr));
+    }
+    .header {
+        font-size: 24px;
+    }
+    #wins {
+        font-size: 40px !important;
+    }
+  }
